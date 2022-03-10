@@ -1,5 +1,5 @@
 {
-    "name": "jcss-components",
+    "name": "@jon-cundiff/jcss-components",
     "version": "0.0.1",
     "description": "React Componenent Library for JCSS",
     "main": "dist/cjs/index.js",
@@ -33,5 +33,13 @@
     "files": [
         "dist"
     ],
-    "types": "dist/index.d.ts"
+    "types": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jon-cundiff/jcss-components.git"
+    },
+    "bugs": {
+        "url": "https://github.com/jon-cundiff/jcss-components/issues"
+    },
+    "homepage": "https://github.com/jon-cundiff/jcss-components#readme"
 }
