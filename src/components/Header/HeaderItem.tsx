@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { HeaderItem } from "./Header.types";
 import { Link } from "react-router-dom";
+import ClassNameBuilder from "../Util/ClassNameBuilder";
 
 const HeaderItem: FC<HeaderItem> = ({
     text,
@@ -9,6 +10,9 @@ const HeaderItem: FC<HeaderItem> = ({
     itemChildren,
     className,
 }) => {
+    const classes = new ClassNameBuilder("header-item").processClassName(
+        className
+    );
     const childrenItems = itemChildren
         ? itemChildren.map((child, i) => <HeaderItem key={i} {...child} />)
         : "";
@@ -32,7 +36,7 @@ const HeaderItem: FC<HeaderItem> = ({
         <p>{text}</p>;
     }
 
-    return <div className="header-item">{linkItem}</div>;
+    return <div className={classes.getClassString()}>{linkItem}</div>;
 };
 
 export default HeaderItem;

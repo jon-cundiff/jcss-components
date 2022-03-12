@@ -11,12 +11,10 @@ const Header: FC<HeaderProps> = ({
     leftChildren,
     rightChildren,
     className,
-    children,
 }) => {
     const classes = new ClassNameBuilder("header")
         .processProps({ styleType })
         .processClassName(className);
-
     let logoTextItem;
     if (!logoImg) {
         logoTextItem = <h1>{logoText ? logoText : "Home"}</h1>;
@@ -28,6 +26,16 @@ const Header: FC<HeaderProps> = ({
         ? leftChildren.map((child, i) => <HeaderItem key={i} {...child} />)
         : "";
 
+    const rightChildrenItems = rightChildren
+        ? rightChildren.map((child, i) => (
+              <HeaderItem
+                  key={i}
+                  {...child}
+                  className={i === 0 ? "mobile-row-end" : ""}
+              />
+          ))
+        : "";
+
     return (
         <header className={classes.getClassString()}>
             <div className="header-logo">
@@ -36,7 +44,10 @@ const Header: FC<HeaderProps> = ({
                     {logoTextItem}
                 </Link>
             </div>
-            <div className="header-items">{children && children}</div>
+            <div className="header-items">
+                {leftChildrenItems}
+                {rightChildrenItems}
+            </div>
         </header>
     );
 };
