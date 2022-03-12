@@ -10,3 +10,10 @@ export const processCommonProps = (
     }
     if (modifiers) classNames.push(...modifiers);
 };
+
+export const processClassName = (
+    classNames: string[],
+    className: string | undefined
+) => {
+    if (className) classNames.push(...className.split(" "));
+};
