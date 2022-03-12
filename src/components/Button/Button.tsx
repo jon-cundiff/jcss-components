@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import "@jon-cundiff/jcss/dist/jcss.min.css";
 
 import { ButtonProps } from "./Button.types";
-import { processCommonProps } from "../Util/classNames";
+import { processClassName, processCommonProps } from "../Util/classNames";
 
 const Button: FC<ButtonProps> = ({
     text,
@@ -11,6 +11,7 @@ const Button: FC<ButtonProps> = ({
     styleType,
     modifiers,
     onClick,
+    className,
     children,
 }) => {
     const classNames = ["btn"];
@@ -21,6 +22,8 @@ const Button: FC<ButtonProps> = ({
     } else if (!text && !children) {
         classNames.push("icon-only");
     }
+
+    processClassName(classNames, className);
 
     return (
         <button onClick={onClick} className={classNames.join(" ")}>
