@@ -7,6 +7,7 @@ import { processClassName } from "../Util/classNames";
 
 const Row: FC<RowProps> = ({
     reverse,
+    fill,
     align,
     justify,
     fg,
@@ -18,6 +19,7 @@ const Row: FC<RowProps> = ({
     let classNames = ["parent"];
 
     if (reverse) classNames.push("row-reverse");
+    if (fill) classNames.push("row-fill");
     if (align) classNames.push(align);
     if (justify) classNames.push(justify);
     processGaps(classNames, fg, fgx, fgy);
