@@ -16,8 +16,8 @@ const MobileRow: FC<MobileRowProps> = ({
 }) => {
     let classNames = ["parent", "mobile-row"];
 
-    if (align) classNames.push(align);
-    if (justify) classNames.push(justify);
+    if (align) classNames.push(`align-${align}`);
+    if (justify) classNames.push(`justify-${justify}`);
     processGaps(classNames, fg, fgx, fgy);
     processClassName(classNames, className);
 
