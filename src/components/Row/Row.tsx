@@ -16,16 +16,14 @@ const Row: FC<RowProps> = ({
     className,
     children,
 }) => {
-    let classNames = ["parent"];
+    let classes = new ClassNameBuilder("parent");
 
-    if (reverse) classNames.push("row-reverse");
-    if (fill) classNames.push("row-fill");
-    if (align) classNames.push(`align-${align}`);
-    if (justify) classNames.push(`justify-${justify}`);
-    processGaps(classNames, fg, fgx, fgy);
-    processClassName(classNames, className);
+    if (reverse) classes.add("row-reverse");
+    if (fill) classes.add("row-fill");
+    classes.processProps({ align, justify, fg, fgx, fgy });
+    classes.processClassName(className);
 
-    return <div className={classNames.join(" ")}>{children}</div>;
+    return <div className={classes.getClassString()}>{children}</div>;
 };
 
 export default Row;

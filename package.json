@@ -1,6 +1,6 @@
 {
     "name": "@jon-cundiff/jcss-components",
-    "version": "0.0.14",
+    "version": "0.0.16",
     "description": "React Componenent Library for JCSS",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
@@ -32,7 +32,8 @@
         "typescript": "^4.6.2"
     },
     "dependencies": {
-        "@jon-cundiff/jcss": "^0.0.5"
+        "@jon-cundiff/jcss": "^0.0.5",
+        "react-router-dom": "^6.2.2"
     },
     "files": [
         "dist"
