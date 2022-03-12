@@ -2,17 +2,14 @@ import React, { FC } from "react";
 import "@jon-cundiff/jcss/dist/jcss.min.css";
 
 import { JCSSAppProps } from "./JCSSApp.types";
-import { processGaps } from "../Util/gaps";
-import { processClassName } from "../Util/classNames";
+import ClassNameBuilder from "../Util/ClassNameBuilder";
 
 const JCSSApp: FC<JCSSAppProps> = ({ fg, fgx, fgy, className, children }) => {
-    const classNames = ["app"];
+    const classes = new ClassNameBuilder("app")
+        .processProps({ fg, fgx, fgy })
+        .processClassName(className);
 
-    if (className) classNames.push(...className.split(" "));
-    processGaps(classNames, fg, fgx, fgy);
-    processClassName(classNames, className);
-
-    return <div className={classNames.join(" ")}>{children}</div>;
+    return <div className={classes.getClassString()}>{children}</div>;
 };
 
 export default JCSSApp;
