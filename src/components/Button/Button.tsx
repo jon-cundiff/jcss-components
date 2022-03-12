@@ -2,31 +2,31 @@ import React, { FC } from "react";
 import "@jon-cundiff/jcss/dist/jcss.min.css";
 
 import { ButtonProps } from "./Button.types";
-import { processClassName, processCommonProps } from "../Util/classNames";
+import ClassNameBuilder from "../Util/ClassNameBuilder";
 
 const Button: FC<ButtonProps> = ({
     text,
     faIcon,
     iconCircle,
     styleType,
-    modifiers,
     onClick,
     className,
     children,
 }) => {
-    const classNames = ["btn"];
-    processCommonProps(classNames, styleType, modifiers);
-
+    let iconclass = "";
     if (iconCircle) {
-        classNames.push("icon-circle");
+        iconclass = "icon-circle";
     } else if (!text && !children) {
-        classNames.push("icon-only");
+        iconclass = "icon-only";
     }
 
-    processClassName(classNames, className);
+    const classes = new ClassNameBuilder("btn")
+        .add(iconclass)
+        .processProps({ styleType })
+        .processClassName(className);
 
     return (
-        <button onClick={onClick} className={classNames.join(" ")}>
+        <button onClick={onClick} className={classes.getClassString()}>
             {faIcon ? <i className={faIcon}></i> : ""}
             <span>{text ? text : children}</span>
         </button>

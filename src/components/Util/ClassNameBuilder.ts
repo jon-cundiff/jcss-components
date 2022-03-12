@@ -69,3 +69,5 @@ class ClassNameBuilder {
         return this.classNames.join(" ");
     }
 }
+
+export default ClassNameBuilder;

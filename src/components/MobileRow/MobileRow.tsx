@@ -2,8 +2,7 @@ import React, { FC } from "react";
 import "@jon-cundiff/jcss/dist/jcss.min.css";
 
 import { MobileRowProps } from "./MobileRow.types";
-import { processGaps } from "../Util/gaps";
-import { processClassName } from "../Util/classNames";
+import ClassNameBuilder from "../Util/ClassNameBuilder";
 
 const MobileRow: FC<MobileRowProps> = ({
     align,
@@ -14,14 +13,12 @@ const MobileRow: FC<MobileRowProps> = ({
     className,
     children,
 }) => {
-    let classNames = ["parent", "mobile-row"];
+    let classes = new ClassNameBuilder("parent")
+        .add("mobile-row")
+        .processProps({ align, justify, fg, fgx, fgy })
+        .processClassName(className);
 
-    if (align) classNames.push(`align-${align}`);
-    if (justify) classNames.push(`justify-${justify}`);
-    processGaps(classNames, fg, fgx, fgy);
-    processClassName(classNames, className);
-
-    return <div className={classNames.join(" ")}>{children}</div>;
+    return <div className={classes.getClassString()}>{children}</div>;
 };
 
 export default MobileRow;

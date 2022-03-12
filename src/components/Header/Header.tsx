@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { processClassName, processCommonProps } from "../Util/classNames";
+import ClassNameBuilder from "../Util/ClassNameBuilder";
 import { HeaderProps } from "./Header.types";
 import HeaderItem from "./HeaderItem";
 
