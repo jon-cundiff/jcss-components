@@ -20,8 +20,8 @@ const Row: FC<RowProps> = ({
 
     if (reverse) classNames.push("row-reverse");
     if (fill) classNames.push("row-fill");
-    if (align) classNames.push(align);
-    if (justify) classNames.push(justify);
+    if (align) classNames.push(`align-${align}`);
+    if (justify) classNames.push(`justify-${justify}`);
     processGaps(classNames, fg, fgx, fgy);
     processClassName(classNames, className);
 
