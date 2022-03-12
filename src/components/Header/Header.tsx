@@ -6,6 +6,7 @@ import HeaderItem from "./HeaderItem";
 
 const Header: FC<HeaderProps> = ({
     styleType,
+    lighter,
     logoImg,
     logoText,
     leftChildren,
@@ -13,7 +14,7 @@ const Header: FC<HeaderProps> = ({
     className,
 }) => {
     const classes = new ClassNameBuilder("header")
-        .processProps({ styleType })
+        .processProps({ styleType, lighter })
         .processClassName(className);
     let logoTextItem;
     if (!logoImg) {

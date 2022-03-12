@@ -2,6 +2,7 @@ interface cbProps {
     align?: "start" | "end" | "center";
     justify?: "start" | "end" | "center" | "between" | "around";
     styleType?: "primary" | "secondary" | "danger" | "success" | "info";
+    lighter?: boolean;
     fg?: 0 | 1 | 2 | 3 | 4 | 5;
     fgx?: 0 | 1 | 2 | 3 | 4 | 5;
     fgy?: 0 | 1 | 2 | 3 | 4 | 5;
@@ -24,7 +25,9 @@ class ClassNameBuilder {
 
     public processProps(props: cbProps) {
         if (props.styleType) {
-            this.classNames.push(props.styleType);
+            this.classNames.push(
+                `${props.styleType}${props.lighter ? "-lighter" : ""}`
+            );
         } else {
             this.classNames.push("primary");
         }

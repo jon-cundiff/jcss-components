@@ -10,6 +10,7 @@ export interface HeaderItem {
 
 export interface HeaderProps {
     styleType?: "primary" | "secondary" | "danger" | "success" | "info";
+    lighter?: boolean;
     logoImg?: string;
     logoText?: string;
     leftChildren?: HeaderItem[];
