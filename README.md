@@ -7,8 +7,8 @@ Documentation site located [here](https://jcss.pages.dev/)
 
 ## Completed Components
 
--   Button
--   App
+-   JCSSApp
 -   Column
 -   Row
 -   MobileRow
+-   Button
