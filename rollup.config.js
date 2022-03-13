@@ -33,7 +33,12 @@ export default [
             peerDepsExternal(),
             postcss(),
         ],
-        external: ["react", "react-dom", "@jon-cundiff/jcss/dist/jcss.min.css"],
+        external: [
+            "react",
+            "react-dom",
+            "react-router-dom",
+            "@jon-cundiff/jcss/dist/jcss.min.css",
+        ],
     },
     {
         input: "dist/esm/types/index.d.ts",
