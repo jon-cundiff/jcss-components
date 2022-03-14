@@ -10,11 +10,13 @@ const MobileRow: FC<MobileRowProps> = ({
     fg,
     fgx,
     fgy,
+    wrap,
     className,
     children,
 }) => {
     let classes = new ClassNameBuilder("parent")
         .add("mobile-row")
+        .add(wrap ? "row-wrap" : "")
         .processProps({ align, justify, fg, fgx, fgy })
         .processClassName(className);
 
