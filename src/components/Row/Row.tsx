@@ -12,12 +12,14 @@ const Row: FC<RowProps> = ({
     fg,
     fgx,
     fgy,
+    wrap,
     className,
     children,
 }) => {
     let classes = new ClassNameBuilder("parent")
         .add(reverse ? "row-reverse" : "")
         .add(fill ? "row-fill" : "")
+        .add(wrap ? "row-wrap" : "")
         .processProps({ align, justify, fg, fgx, fgy })
         .processClassName(className);
 
