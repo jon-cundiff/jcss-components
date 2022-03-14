@@ -33,7 +33,7 @@ const HeaderItem: FC<HeaderItem> = ({
             </>
         );
     } else {
-        <p>{inner}</p>;
+        linkItem = <p>{inner}</p>;
     }
 
     return <div className={classes.getClassString()}>{linkItem}</div>;
