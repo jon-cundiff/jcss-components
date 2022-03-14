@@ -6,6 +6,7 @@ import ClassNameBuilder from "../Util/ClassNameBuilder";
 
 const Button: FC<ButtonProps> = ({
     text,
+    disabled,
     faIcon,
     iconCircle,
     styleType,
@@ -26,7 +27,11 @@ const Button: FC<ButtonProps> = ({
         .processClassName(className);
 
     return (
-        <button onClick={onClick} className={classes.getClassString()}>
+        <button
+            onClick={onClick}
+            className={classes.getClassString()}
+            disabled={disabled}
+        >
             {faIcon ? <i className={faIcon}></i> : ""}
             <span>{text ? text : children}</span>
         </button>
