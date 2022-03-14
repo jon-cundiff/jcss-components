@@ -6,5 +6,6 @@ export interface CardProps {
     lighter?: boolean;
     sub?: boolean;
     className: string;
+    innerClassName: string;
     children: ReactNode;
 }
