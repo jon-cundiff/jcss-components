@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ClassNameBuilder from "../Util/ClassNameBuilder";
 
 const HeaderItem: FC<HeaderItem> = ({
-    text,
+    inner,
     link,
     external,
     itemChildren,
@@ -20,20 +20,20 @@ const HeaderItem: FC<HeaderItem> = ({
     let linkItem;
     if (link) {
         linkItem = external ? (
-            <a href={link}>{text}</a>
+            <a href={link}>{inner}</a>
         ) : (
-            <Link to={link}>{text}</Link>
+            <Link to={link}>{inner}</Link>
         );
     } else if (itemChildren) {
         // TODO implement dropdown to handle this effectively
         linkItem = (
             <>
-                <p className="dropdown">{text}</p>
+                <p className="dropdown">{inner}</p>
                 <div className="dropdown-items">{childrenItems}</div>
             </>
         );
     } else {
-        <p>{text}</p>;
+        <p>{inner}</p>;
     }
 
     return <div className={classes.getClassString()}>{linkItem}</div>;

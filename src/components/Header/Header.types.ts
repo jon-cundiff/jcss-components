@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export interface HeaderItem {
-    text: string;
+    inner: string | ReactNode;
     link?: string;
     external?: boolean;
     className?: string;
