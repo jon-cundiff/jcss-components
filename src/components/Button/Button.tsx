@@ -33,7 +33,7 @@ const Button: FC<ButtonProps> = ({
             disabled={disabled}
         >
             {faIcon ? <i className={faIcon}></i> : ""}
-            <span>{text ? text : children}</span>
+            {(text || children) && <span>{text ? text : children}</span>}
         </button>
     );
 };
