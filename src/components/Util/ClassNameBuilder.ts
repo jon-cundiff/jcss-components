@@ -23,12 +23,12 @@ class ClassNameBuilder {
         return this;
     }
 
-    public processProps(props: cbProps) {
+    public processProps(props: cbProps, styleRequired?: boolean) {
         if (props.styleType) {
             this.classNames.push(
                 `${props.styleType}${props.lighter ? "-lighter" : ""}`
             );
-        } else {
+        } else if (styleRequired) {
             this.classNames.push("primary");
         }
 

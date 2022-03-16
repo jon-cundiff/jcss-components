@@ -6,6 +6,7 @@ export interface ButtonProps {
     faIcon?: string;
     iconCircle?: boolean;
     styleType?: "primary" | "secondary" | "danger" | "success" | "info";
+    lighter?: boolean;
     modifiers?: string[];
     className?: string;
 }
