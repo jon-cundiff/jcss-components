@@ -9,7 +9,7 @@ const Footer: FC<FooterProps> = ({
     children,
 }) => {
     const classes = new ClassNameBuilder("footer")
-        .processProps({ styleType, lighter })
+        .processProps({ styleType, lighter }, true)
         .processClassName(className);
 
     return <footer className={classes.getClassString()}>{children}</footer>;

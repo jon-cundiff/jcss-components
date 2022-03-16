@@ -29,7 +29,7 @@ const Header: FC<HeaderProps> = ({
     }
 
     const classes = new ClassNameBuilder("header")
-        .processProps({ styleType, lighter })
+        .processProps({ styleType, lighter }, true)
         .processClassName(className);
     let logoTextItem;
     if (!logoImg) {
