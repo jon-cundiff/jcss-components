@@ -10,6 +10,7 @@ const Button: FC<ButtonProps> = ({
     faIcon,
     iconCircle,
     styleType,
+    lighter,
     onClick,
     className,
     children,
@@ -23,7 +24,7 @@ const Button: FC<ButtonProps> = ({
 
     const classes = new ClassNameBuilder("btn")
         .add(iconclass)
-        .processProps({ styleType })
+        .processProps({ styleType, lighter })
         .processClassName(className);
 
     return (
