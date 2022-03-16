@@ -15,10 +15,13 @@ const Card: FC<CardProps> = ({
         .add(sub ? "sub" : "")
         .processClassName(className);
 
-    let titleClasses = new ClassNameBuilder("card-title").processProps({
-        styleType,
-        lighter,
-    });
+    let titleClasses = new ClassNameBuilder("card-title").processProps(
+        {
+            styleType,
+            lighter,
+        },
+        true
+    );
 
     let bodyClasses = new ClassNameBuilder("card-body").processClassName(
         innerClassName
