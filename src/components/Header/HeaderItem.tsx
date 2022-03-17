@@ -2,13 +2,17 @@ import React, { FC } from "react";
 import { HeaderItem } from "./Header.types";
 import { Link } from "react-router-dom";
 import ClassNameBuilder from "../Util/ClassNameBuilder";
+import Dropdown from "../Dropdown";
 
 const HeaderItem: FC<HeaderItem> = ({
+    styleType,
+    lighter,
     inner,
     link,
     external,
-    itemChildren,
+    dropdownEnd,
     className,
+    itemChildren,
 }) => {
     const classes = new ClassNameBuilder("header-item").processClassName(
         className
@@ -24,13 +28,16 @@ const HeaderItem: FC<HeaderItem> = ({
         ) : (
             <Link to={link}>{inner}</Link>
         );
-    } else if (itemChildren) {
-        // TODO implement dropdown to handle this effectively
+    } else if (itemChildren && typeof inner === "string") {
         linkItem = (
-            <>
-                <p className="dropdown">{inner}</p>
-                <div className="dropdown-items">{childrenItems}</div>
-            </>
+            <Dropdown
+                title={inner}
+                styleType={styleType}
+                lighter={lighter}
+                alignRight={dropdownEnd}
+            >
+                {childrenItems}
+            </Dropdown>
         );
     } else {
         linkItem = <p>{inner}</p>;

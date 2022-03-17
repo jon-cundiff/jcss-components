@@ -39,13 +39,17 @@ const Header: FC<HeaderProps> = ({
     }
 
     const leftChildrenItems = leftChildren
-        ? leftChildren.map((child, i) => <HeaderItem key={i} {...child} />)
+        ? leftChildren.map((child, i) => (
+              <HeaderItem key={i} {...child} styleType={styleType} />
+          ))
         : "";
 
     const rightChildrenItems = rightChildren
         ? rightChildren.map((child, i) => (
               <HeaderItem
                   key={i}
+                  styleType={styleType}
+                  dropdownEnd
                   {...child}
                   className={i === 0 ? "mobile-row-end" : ""}
               />
