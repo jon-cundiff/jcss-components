@@ -7,3 +7,4 @@ export { default as Footer } from "./Footer";
 export { default as Button } from "./Button";
 export { default as Alert } from "./Alert";
 export { default as Card } from "./Card";
+export { default as Dropdown } from "./Dropdown";
