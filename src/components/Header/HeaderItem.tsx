@@ -25,7 +25,7 @@ const HeaderItem: FC<HeaderItem> = ({
         return (
             <Dropdown
                 title={inner}
-                className="header-item"
+                className={classes.getClassString()}
                 styleType={styleType}
                 lighter={lighter}
                 alignRight={dropdownEnd}
