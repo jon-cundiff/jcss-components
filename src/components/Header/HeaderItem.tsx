@@ -39,8 +39,10 @@ const HeaderItem: FC<HeaderItem> = ({
                 {childrenItems}
             </Dropdown>
         );
-    } else {
+    } else if (typeof inner === "string") {
         linkItem = <p>{inner}</p>;
+    } else {
+        linkItem = inner;
     }
 
     return <div className={classes.getClassString()}>{linkItem}</div>;
