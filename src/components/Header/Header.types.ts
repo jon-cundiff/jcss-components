@@ -1,9 +1,12 @@
 import { ReactNode } from "react";
 
 export interface HeaderItem {
+    styleType?: "primary" | "secondary" | "danger" | "success" | "info";
+    lighter?: boolean;
     inner: string | ReactNode;
     link?: string;
     external?: boolean;
+    dropdownEnd?: boolean;
     className?: string;
     itemChildren?: HeaderItem[];
 }
