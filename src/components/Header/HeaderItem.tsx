@@ -21,23 +21,26 @@ const HeaderItem: FC<HeaderItem> = ({
         ? itemChildren.map((child, i) => <HeaderItem key={i} {...child} />)
         : "";
 
-    let linkItem;
-    if (link) {
-        linkItem = external ? (
-            <a href={link}>{inner}</a>
-        ) : (
-            <Link to={link}>{inner}</Link>
-        );
-    } else if (itemChildren && typeof inner === "string") {
-        linkItem = (
+    if (itemChildren && typeof inner === "string") {
+        return (
             <Dropdown
                 title={inner}
+                className="header-item"
                 styleType={styleType}
                 lighter={lighter}
                 alignRight={dropdownEnd}
             >
                 {childrenItems}
             </Dropdown>
+        );
+    }
+
+    let linkItem;
+    if (link) {
+        linkItem = external ? (
+            <a href={link}>{inner}</a>
+        ) : (
+            <Link to={link}>{inner}</Link>
         );
     } else if (typeof inner === "string") {
         linkItem = <p>{inner}</p>;
