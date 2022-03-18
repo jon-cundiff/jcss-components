@@ -199,10 +199,10 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     "to-fast-properties" "^2.0.0"
 
-"@jon-cundiff/jcss@^0.2.3":
-  "integrity" "sha512-MG3TKO48PHXL4xiQRB0Lx7/XYbHkpGni2i19qKD+HtGDTZnbpLnmfd/umcNiXe+gVXHBomnBMcbfb9sTn9RdkA=="
-  "resolved" "https://registry.npmjs.org/@jon-cundiff/jcss/-/jcss-0.2.3.tgz"
-  "version" "0.2.3"
+"@jon-cundiff/jcss@^0.2.4":
+  "integrity" "sha512-o5Mmc7ZijiUxeNsh6BSdsu4/Of7vVY8bpg9oRIuUERnCvE5AVHlfFaZFQbL1CNMIF4p4D9CWhBZi02g1Zz+LXg=="
+  "resolved" "https://registry.npmjs.org/@jon-cundiff/jcss/-/jcss-0.2.4.tgz"
+  "version" "0.2.4"
   dependencies:
     "chroma-js" "^2.4.2"
     "clean-css-cli" "^5.5.2"
